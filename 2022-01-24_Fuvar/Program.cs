@@ -19,7 +19,7 @@ namespace _2022_01_24_Fuvar
             }
 
             //3. Feladat
-            Console.WriteLine($"3. feladat: {fuvarok.Count} fuvar");
+            Console.WriteLine($"3. Feladat: {fuvarok.Count} fuvar");
 
             //4. Feladat
             double Bevétel = 0;
@@ -64,6 +64,11 @@ namespace _2022_01_24_Fuvar
                 {
                     stat.Add(f.FizetésMód, 1);
                 }
+            }
+            Console.WriteLine($"5. Feladat");
+            foreach (var s in stat)
+            {
+                Console.WriteLine($"\t{s.Key}: {s.Value} fuvar");
             }
 
 
