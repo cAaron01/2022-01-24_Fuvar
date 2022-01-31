@@ -52,7 +52,7 @@ namespace _2022_01_24_Fuvar
             }
             //....
 
-            //5.b
+            // 5.b
             Dictionary<string, int> stat = new Dictionary<string, int>();
             foreach (var f in fuvarok)
             {
@@ -70,6 +70,14 @@ namespace _2022_01_24_Fuvar
             {
                 Console.WriteLine($"\t{s.Key}: {s.Value} fuvar");
             }
+
+            //5.c
+            Console.WriteLine($"5. Feladat");
+            fuvarok
+                .GroupBy(x => x.FizetésMód)
+                .Select(g => new { fizetésmód = g.Key, db = g.Count() })
+                .ToList()
+                .ForEach(x => Console.WriteLine($"\t{x.fizetésmód}: {x.db} fuvar"));
 
 
             Console.ReadKey();
