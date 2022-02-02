@@ -71,14 +71,22 @@ namespace _2022_01_24_Fuvar
                 Console.WriteLine($"\t{s.Key}: {s.Value} fuvar");
             }
 
-            //5.c
+            /*5.c
             Console.WriteLine($"5. Feladat");
             fuvarok
                 .GroupBy(x => x.FizetésMód)
                 .Select(g => new { fizetésmód = g.Key, db = g.Count() })
                 .ToList()
-                .ForEach(x => Console.WriteLine($"\t{x.fizetésmód}: {x.db} fuvar"));
+                .ForEach(x => Console.WriteLine($"\t{x.fizetésmód}: {x.db} fuvar"));*/
 
+            //6. Feladat
+            double össztávolság = 0;
+            foreach (var f in fuvarok)
+            {
+                össztávolság += f.Távolság + 1.6;
+            }
+
+            Console.WriteLine("6. Feladat: {0:0.00}km", össztávolság);
 
             Console.ReadKey();
         }
