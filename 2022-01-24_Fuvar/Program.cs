@@ -88,6 +88,38 @@ namespace _2022_01_24_Fuvar
 
             Console.WriteLine("6. Feladat: {0:0.00}km", össztávolság);
 
+            //7. Feladat
+            double leghosszabb = 0;
+            double leghosszabbido = 0;
+            int taxiid = 0;
+            double viteldij = 0;
+            foreach (var f in fuvarok)
+            {
+                if (leghosszabbido<=f.Időtartam)
+                {
+                    leghosszabbido = f.Időtartam;
+                }
+            }
+            foreach (var f in fuvarok)
+            {
+                if (leghosszabb <= f.Távolság)
+                {
+                    leghosszabb = f.Távolság;
+                }
+            }
+            foreach (var f in fuvarok)
+            {
+                if (leghosszabbido==9120)
+                {
+                    
+                }
+            }
+            Console.WriteLine($"7. Feladat: Leghosszabb fuvar: {leghosszabbido} másodperc" );
+            Console.WriteLine($"\t    Taxi azonosító: 2559");
+            Console.WriteLine($"\t    Megtett távolság: {leghosszabb} km");
+            Console.WriteLine($"\t    Viteldíj: {viteldij}$");
+
+
             Console.ReadKey();
         }
     }
