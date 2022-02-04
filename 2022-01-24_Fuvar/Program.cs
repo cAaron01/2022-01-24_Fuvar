@@ -83,42 +83,30 @@ namespace _2022_01_24_Fuvar
             double össztávolság = 0;
             foreach (var f in fuvarok)
             {
-                össztávolság += f.Távolság + 1.6;
+                össztávolság += f.Távolság * 1.6;
             }
 
-            Console.WriteLine("6. Feladat: {0:0.00}km", össztávolság);
+            Console.WriteLine($"6. Feladat: {össztávolság:0.00}km");
 
             //7. Feladat
-            double leghosszabb = 0;
-            double leghosszabbido = 0;
-            int taxiid = 0;
-            double viteldij = 0;
-            foreach (var f in fuvarok)
+            int leghosszabbIndex = 0;
+            int length = fuvarok.Count;
+            for (int i = 0; i < length; i++)
             {
-                if (leghosszabbido<=f.Időtartam)
+                if (fuvarok[i].Időtartam > fuvarok[leghosszabbIndex].Időtartam)
                 {
-                    leghosszabbido = f.Időtartam;
+                    leghosszabbIndex = i;
                 }
             }
-            foreach (var f in fuvarok)
-            {
-                if (leghosszabb <= f.Távolság)
-                {
-                    leghosszabb = f.Távolság;
-                }
-            }
-            foreach (var f in fuvarok)
-            {
-                if (leghosszabbido==9120)
-                {
-                    
-                }
-            }
-            Console.WriteLine($"7. Feladat: Leghosszabb fuvar: {leghosszabbido} másodperc" );
-            Console.WriteLine($"\t    Taxi azonosító: 2559");
-            Console.WriteLine($"\t    Megtett távolság: {leghosszabb} km");
-            Console.WriteLine($"\t    Viteldíj: 88, 25$");
+            Console.WriteLine($"7. Feladat: Leghosszabb fuvar: " +
+                $"\n\tFuvar hossza: {fuvarok[leghosszabbIndex].Időtartam} másodperc" +
+                $"\n\tTaxi azonosító: {fuvarok[leghosszabbIndex].TaxiId} " +
+                $"\n\tMegtett távolság: {fuvarok[leghosszabbIndex].Távolság} km " +
+                $"\n\tViteldíj: {fuvarok[leghosszabbIndex].Viteldíj}$");
+
+
             //8. Feladat
+
 
 
             Console.ReadKey();
