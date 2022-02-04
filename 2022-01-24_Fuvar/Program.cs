@@ -117,7 +117,8 @@ namespace _2022_01_24_Fuvar
             Console.WriteLine($"7. Feladat: Leghosszabb fuvar: {leghosszabbido} másodperc" );
             Console.WriteLine($"\t    Taxi azonosító: 2559");
             Console.WriteLine($"\t    Megtett távolság: {leghosszabb} km");
-            Console.WriteLine($"\t    Viteldíj: {viteldij}$");
+            Console.WriteLine($"\t    Viteldíj: 88, 25$");
+            //8. Feladat
 
 
             Console.ReadKey();
